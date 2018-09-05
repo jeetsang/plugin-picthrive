@@ -1,22 +1,30 @@
 const EmailTemplateService = {
     installEmailTemplate: (seller, from, to, replyTo) => {
-        let htmlBody = `<p>Hi Keith,</p>
-            <p>
-            Our mutual client has enabled PicThrive.<br>
-            Details:<br>
-            Client name: ${seller.name}<br>
-            Email: ${seller.email}<br>
-            Seller ID: ${seller.id}
+        let htmlBody = `<p>Hello PicThrive,</p>
+            <p> 
+            A seller on Xola has <strong>turned on</strong> the PicThrive integration. Yay!
             </p>
             <p>
-            If they already have an account with PicThrive, please ignore this request. If they do not have an account with PicThrive please create the account.<br>
-            The configuration for sending event details from Xola has already been completed.
+            <strong>Name:</strong> ${seller.name}<br>
+            <strong>Email:</strong> ${seller.email}<br>
+            <strong>Seller ID:</strong> ${seller.id}
             </p>
             <p>
-            Thank you,<br>
-            Xola
+            Xola will now start firing webhooks for any new and modified orders for this seller.
+            </p>
+            <p>
+            If this seller is already a PicThrive customer, please ensure that their seller ID is associated<br>
+            with their account so that the webhooks are successfully processed.
+            </p>
+            <p>
+            
+            </p>
+            If this seller is not a PicThrive customer, please reach out to them.
+            <p>
+            Thanks!<br>
+            Team Xola
             </p>`;
-        let subject = `${seller.name} enabled PicThrive on Xola`;
+        let subject = `A seller on Xola has turned on the PicThrive integration`;
         return {
             "From": from,
             "To": to,
@@ -26,22 +34,23 @@ const EmailTemplateService = {
         };
     },
     uninstallEmailTemplate: (seller, from, to, replyTo) => {
-        let htmlBody = `<p>Hi Keith,</p>
-            <p>
-            Our mutual client has disabled PicThrive.<br>
-            Details:<br>
-            Client name: ${seller.name}<br>
-            Email: ${seller.email}<br>
-            Seller ID: ${seller.id}
+        let htmlBody = `<p>Hello PicThrive,</p>
+            <p> 
+            A seller on Xola has <strong>turned off</strong> the PicThrive integration.
             </p>
             <p>
-            Xola has unregistered the webhooks.
+            <strong>Name:</strong> ${seller.name}<br>
+            <strong>Email:</strong> ${seller.email}<br>
+            <strong>Seller ID:</strong> ${seller.id}
             </p>
             <p>
-            Thank you,<br>
-            Xola
+            Xola will stop firing webhooks for any subsequent orders for this seller.
+            </p>
+            <p>
+            Thanks!<br>
+            Team Xola
             </p>`;
-        let subject = `${seller.name} disabled PicThrive on Xola`;
+        let subject = `A seller on Xola has turned off the PicThrive integration.`;
         return {
             "From": from,
             "To": to,

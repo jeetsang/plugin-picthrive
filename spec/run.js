@@ -1,5 +1,5 @@
 const Jasmine = require('jasmine');
 
 const jasmine = new Jasmine();
-jasmine.loadConfigFile('spec/support/jasmine.json');
+jasmine.loadConfigFile('spec/jasmine.json');
 jasmine.execute();

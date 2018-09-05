@@ -1,13 +1,6 @@
 import axios from "axios";
-import Logger from '../Logger';
-import createError from 'http-errors';
 import config from 'config';
 import EmailTemplateService from '../services/EmailTemplateService';
-
-const handleXolaError = (e, message) => {
-    Logger.error(message, {message: e.message, status: e.statusCode});
-    throw createError(500);
-};
 
 const getSellerPublicInfo = async function(sellerId) {
     let url = `${config.get("xola.url")}/api/sellers/${sellerId}`;
@@ -21,13 +14,8 @@ const sendEmail = async (emailData) => {
         "X-Postmark-Server-Token": config.get('postmark.serverToken')
     };
 
-    try {
-        let url = config.get("postmark.url") + "/email";
-        axios.post(url, emailData, {headers: headers});
-
-    } catch (e) {
-        handleXolaError(e, 'Error posting email to postmark');
-    }
+    let url = config.get("postmark.url") + "/email";
+    axios.post(url, emailData, {headers: headers});
 };
 
 const PostmarkService = {
