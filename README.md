@@ -18,11 +18,11 @@ npm install
  ```
  npm run start
   ```
-3.Start the app with pm2
- ```
- pm2 start index.esm.js
-  ```
 ##### Run test:
  ```
  npm test
+  ```
+##### Run the app with pm2 for environment like sandbox, production etc.
+ ```
+ pm2 start index.esm.js
   ```
