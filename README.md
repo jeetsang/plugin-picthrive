@@ -9,12 +9,20 @@ PicThrive Plugin for Xola App Store
 2. Copy `config\default.json.` to `config\local.json` and update the configs in `config\local.json` accordingly. 
  
 
-##### Server setup:
- ``` 
- npm install
+##### Setup:
+1.Install server dependencies
+```
+npm install
+```
+2.Start the app with npm
+ ```
  npm run start
   ```
-##### run test:
- ``` 
+3.Start the app with pm2
+ ```
+ pm2 start index.esm.js
+  ```
+##### Run test:
+ ```
  npm test
   ```
