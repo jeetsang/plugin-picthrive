@@ -4,13 +4,13 @@ import axios from "axios";
 
 const WebhookController = {
     processWebhook: async (req, res) => {
-        const {eventName, payload} = req.body;
+        const {eventName, data} = req.body;
         switch (eventName) {
             case 'installation.create':
-                PostmarkService.sendInstallEmail(payload);
+                PostmarkService.sendInstallEmail(data);
                 break;
             case 'installation.delete':
-                PostmarkService.sendUninstallEmail(payload);
+                PostmarkService.sendUninstallEmail(data);
                 break;
             case 'order.create' :
             case 'order.update':
