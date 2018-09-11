@@ -1,0 +1,20 @@
+{
+  "postmark": {
+    "url": "https://api.postmarkapp.com",
+    "serverToken": "",
+    "email": {
+      "from": "",
+      "to": "",
+      "replyTo": ""
+    }
+  },
+  "picthrive": {
+    "url": ""
+  },
+  "xola": {
+    "url": ""
+  },
+  "app": {
+    "port": 11102
+  }
+}
