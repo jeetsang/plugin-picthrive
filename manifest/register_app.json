@@ -2,10 +2,10 @@
   "description": "Boost your photo and video revenue by automatically capturing lost sales with PicThrive. After a trip, guests leave without buying their photos or videos. Via this integration, the algorithm identifies who has not purchased photos on-site and automatically connects them to their trip’s album for the opportunity to buy online. This powerful feature sees a 35% higher conversion rate than simply placing a store link in a standard follow up email.",
   "developer": "Xola",
   "email": "xolafriends@picthrive.com",
-  "link": "http://www.picthrive.com",
+  "link": "https://www.picthrive.com",
   "name": "PicThrive",
   "prerequisites": [
-    "Ensure that you create an account on PicThrive before you install the plugin."
+    "You should have an account on PicThrive before installing this app."
   ],
   "privacyPolicy": "https://www.picthrive.com/privacy-policy/",
   "summary": "Automatically sell photos or videos after guests leave",
@@ -21,6 +21,7 @@
       "order.create",
       "order.update"
     ],
-    "url": "https://picthrive-app.xola.com/webhooks"
+    "apiVersion": "2017-06-10",
+    "url": "https://picthrive.plugin.xola.com/webhooks"
   }
 }
