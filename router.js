@@ -12,5 +12,6 @@ function wrapAsync(fn) {
 }
 
 router.post('/webhooks', wrapAsync(WebhookController.processWebhook));
+router.get('/status', (req, res) => res.send('OK'));
 
 export default router;
