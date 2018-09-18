@@ -1,0 +1,16 @@
+{
+  "postmark": {
+    "serverToken": "",
+    "email": {
+      "from": "automated@xola.com",
+      "to": "xolafriends@picthrive.com",
+      "replyTo": "support@xola.com"
+    }
+  },
+  "picthrive": {
+    "url": "https://api.picthrive.com/v1/Res/Xola"
+  },
+  "xola": {
+    "url": "https://xola.com"
+  }
+}
